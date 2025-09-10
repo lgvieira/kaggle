@@ -30,3 +30,18 @@ more_popular = '3 Musketeers'
 # Which candy has higher sugar content: 'Air Heads'
 # or 'Baby Ruth'?
 more_sugar = 'Air Heads'
+
+# Scatter plot showing the relationship between 'sugarpercent' and 'winpercent'
+sns.scatterplot(x=candy_data['sugarpercent'], y=candy_data['winpercent'])
+
+# Scatter plot w/ regression line showing the relationship between 'sugarpercent' and 'winpercent'
+sns.regplot(x=candy_data['sugarpercent'], y=candy_data['winpercent'])
+
+# Scatter plot showing the relationship between 'pricepercent', 'winpercent', and 'chocolate'
+sns.scatterplot(x=candy_data['pricepercent'], y=candy_data['winpercent'], hue=candy_data['chocolate'])
+
+# Color-coded scatter plot w/ regression lines
+sns.lmplot(x="pricepercent", y="winpercent", hue="chocolate", data=candy_data)
+
+# Scatter plot showing the relationship between 'chocolate' and 'winpercent'
+sns.swarmplot(x=candy_data['chocolate'], y=candy_data['winpercent'])
